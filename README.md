@@ -6,4 +6,5 @@ Kravspecifikation:
 * Rumskibet skal kune styres
 * Rumskibet skal kunne skyde efter atroiderne
 * Der skal være astroider
-* Astroider skal svæve rundt
+* Astroider skal svæve tilfældigt rundt
+* Asteroiderne skal gennereres tilfældigt
