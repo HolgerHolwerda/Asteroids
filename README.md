@@ -2,4 +2,4 @@
 
 Virker det?
 
-Ja det virker rigtig fint!
+Ja det virker fint!
