@@ -13,6 +13,7 @@ function draw() {
   background(20);
   ship.render();
   ship.turn();
+  ship.update();
 
 
   for (var i = 0; i < asteroids.length; i++){
