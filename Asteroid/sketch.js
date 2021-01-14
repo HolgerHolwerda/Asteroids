@@ -1,13 +1,18 @@
 var asteroids = [] // defining astroids as arrays
+
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  asteroids.push(new Asteroid());
+  
+  ship = new Ship();
+ // asteroids.push(new Asteroid());
 }
 
 function draw() {
   background(20);
-  ship = new Ship();
   ship.render();
+  ship.turn();
+
+
   for (var i = 0; i < asteroids.length; i++){
     asteroids[i].render();
   }
