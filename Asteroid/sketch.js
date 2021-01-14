@@ -4,5 +4,6 @@ function setup() {
 
 function draw() {
   background(20);
-
+  ship = new Ship();
+  ship.render();
 }
