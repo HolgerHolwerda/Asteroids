@@ -1,17 +1,18 @@
 
+
 function keyReleased() {
     ship.setRotation(0);
     ship.boosting(false);
 }
 
 function keyPressed() {
-    if (keyCode == RIGHT_ARROW) {
+    if (keyCode == RIGHT_ARROW ) {//|| keyCode == 68
         ship.setRotation(0.1);
-    } else if (keyCode == LEFT_ARROW) {
+    } else if (keyCode == LEFT_ARROW ) {//|| keyCode == 65
         ship.setRotation(-0.1);
-    } else if (keyCode == UP_ARROW) {
+    } else if (keyCode == UP_ARROW ) {//|| keyCode == 87
         ship.boosting(true);
-    }
+    } 
 }
 
 function Ship() {
@@ -21,14 +22,22 @@ function Ship() {
     this.rotation = 0;
     this.vel = createVector(1, 0);
     this.isBossting = false;
+    this.isUltraboost = false
 
     this.boosting = function (b) {
         this.isBoosting = b;
     }
 
+    this.Ultraboosting = function (b) {
+        this.isUltraboost = b
+    }
+
     this.update = function () {
         if (this.isBoosting) {
             this.boost();
+        }
+        if (this.isUltraboosting) {
+            this.ultraboost();
         }
         this.pos.add(this.vel);
         this.vel.mult(0.99);
@@ -37,6 +46,12 @@ function Ship() {
     this.boost = function () {
         var force = p5.Vector.fromAngle(this.direction);
         force.mult(0.1);
+        this.vel.add(force);
+    }
+
+    this.ultraboost = function () {
+        var force = p5.Vector.fromAngle(this.direction);
+        force.mult(4);
         this.vel.add(force);
     }
 
