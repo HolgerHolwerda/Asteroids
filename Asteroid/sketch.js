@@ -17,10 +17,10 @@ function draw() {
   ship.update();
   ship.edges();
   ship.movement();
-  // for (var i = 0; i < asteroids.length; i++) {
-  //   asteroids[i].render();
-  //   asteroids[i].update();
-  //   asteroids[i].edges();
-  // }
+  for (var i = 0; i < asteroids.length; i++) {
+    asteroids[i].render();
+    asteroids[i].update();
+    asteroids[i].edges();
+  }
 
 }
