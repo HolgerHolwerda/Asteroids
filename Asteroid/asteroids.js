@@ -16,7 +16,7 @@ function Asteroid() {
         push();
         stroke(255);
         noFill();
-        translate(this.pos.x, this.s.y);
+        translate(this.pos.x, this.pos.y);
         //elipse(0,0,this.r * 2);
         beginShape();
         for (var i = 0; i < this.total; i++) {

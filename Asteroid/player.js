@@ -1,18 +1,42 @@
-
-
 function keyReleased() {
-    ship.setRotation(0);
+    //ship.setRotation(0);
     ship.boosting(false);
-}
-
-function keyPressed() {
+    //ship.ultraboost(false);
     if (keyCode == RIGHT_ARROW ) {//|| keyCode == 68
-        ship.setRotation(0.1);
-    } else if (keyCode == LEFT_ARROW ) {//|| keyCode == 65
-        ship.setRotation(-0.1);
-    } else if (keyCode == UP_ARROW ) {//|| keyCode == 87
-        ship.boosting(true);
-    } 
+        isRight = false
+    }
+    if (keyCode == LEFT_ARROW ) {//|| keyCode == 65
+        isLeft = false
+    }
+    if (keyCode == UP_ARROW ) {//|| keyCode == 87
+      isUp = false
+    }
+  }
+  
+  function keyPressed() {
+    if (keyCode == RIGHT_ARROW ) {//|| keyCode == 68
+        isRight = true;
+    }
+    if (keyCode == LEFT_ARROW ) {//|| keyCode == 65
+        isLeft = true;
+    }
+    if (keyCode == UP_ARROW ) {//|| keyCode == 87
+        isUp = true
+    }
+    if(keyCode == 32){
+        if(count >= 10){
+            ship.ultraboost(true);
+            count = 0;
+            fill(0);
+        }
+    }
+  }
+   function timeleft(){
+    count++;
+    console.log(count)
+    if(count >= 10){
+        fill(255);
+    }
 }
 
 function Ship() {
@@ -22,7 +46,12 @@ function Ship() {
     this.rotation = 0;
     this.vel = createVector(1, 0);
     this.isBossting = false;
-    this.isUltraboost = false
+    this.isUltraboost = false;
+    isUp = false;
+    isRight = false;
+    isLeft = false;
+    count = 10
+    setInterval(timeleft, 1000);
 
     this.boosting = function (b) {
         this.isBoosting = b;
@@ -58,7 +87,7 @@ function Ship() {
     this.render = function () {
         translate(this.pos.x, this.pos.y);
         rotate(this.direction + PI / 2); // pi/2 er 90 grader i radianer
-        noFill();
+        //noFill();
         stroke(255);
         triangle(-this.r, this.r, this.r, this.r, 0, -this.r);
     }
@@ -82,6 +111,27 @@ function Ship() {
 
     this.turn = function () {
         this.direction += this.rotation;
+    }
+
+    this.movement = function() {
+        if (isUp) {
+            push();
+            ship.boosting;
+            pop();
+        }
+        ship.boosting(isUp)
+
+        if (isRight) {
+            ship.setRotation (0.1);
+        }
+
+        if (isLeft) {
+            ship.setRotation (-0.1);
+        }
+        if (!isLeft && !isRight || isLeft && isRight) {
+            ship.setRotation (0);
+        }
+
     }
 }
 
