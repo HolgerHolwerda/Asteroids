@@ -35,7 +35,7 @@ function keyReleased() {
   //denne funktion bliver kaldt hvert sekundt
    function boostTimer(){
     boostCounter++;
-    if(count >= 10) fill(255) //boost muligt derfor ændre farve på Player/skibet
+    if(boostCounter >= 10) fill(255);
 }
 
 function Ship() {
