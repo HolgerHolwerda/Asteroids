@@ -14,6 +14,7 @@ function setup() {
 
 function draw() {
   background(20);
+  boostbar()
   for (var i = 0; i < asteroids.length; i++) {
     asteroids[i].render();
     asteroids[i].update();
@@ -24,7 +25,6 @@ function draw() {
   ship.update();
   ship.edges();
   ship.movement();
-
   for (var i = 0; i < lasers.length; i++) {
     lasers[i].render();
     lasers[i].update();
