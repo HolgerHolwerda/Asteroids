@@ -2,25 +2,25 @@ function keyReleased() {
     //ship.setRotation(0);
     ship.boosting(false);
     //ship.ultraboost(false);
-    if (keyCode == RIGHT_ARROW ) {//|| keyCode == 68
+    if (keyCode == RIGHT_ARROW || keyCode == 68) {
         isRight = false
     }
-    if (keyCode == LEFT_ARROW ) {//|| keyCode == 65
+    if (keyCode == LEFT_ARROW || keyCode == 65) {
         isLeft = false
     }
-    if (keyCode == UP_ARROW ) {//|| keyCode == 87
+    if (keyCode == UP_ARROW || keyCode == 87) {
       isUp = false
     }
   }
   
   function keyPressed() {
-    if (keyCode == RIGHT_ARROW ) {//|| keyCode == 68
+    if (keyCode == RIGHT_ARROW || keyCode == 68) {
         isRight = true;
     }
-    if (keyCode == LEFT_ARROW ) {//|| keyCode == 65
+    if (keyCode == LEFT_ARROW || keyCode == 65) {
         isLeft = true;
     }
-    if (keyCode == UP_ARROW ) {//|| keyCode == 87
+    if (keyCode == UP_ARROW || keyCode == 87) {
         isUp = true
     }
     if(keyCode == 32){
