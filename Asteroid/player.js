@@ -23,20 +23,19 @@ function keyReleased() {
     if (keyCode == UP_ARROW || keyCode == 87) {
         isUp = true
     }
-    if(keyCode == 32){
-        if(count >= 10){
+    if(keyCode == 16){
+        if(boostCounter >= 10){
+            //Her bliver ultraboost brugt og ændre farven på skibet
             ship.ultraboost(true);
-            count = 0;
+            boostCounter = 0;
             fill(0);
         }
     }
   }
-   function timeleft(){
-    count++;
-    console.log(count)
-    if(count >= 10){
-        fill(255);
-    }
+  //denne funktion bliver kaldt hvert sekundt
+   function boostTimer(){
+    boostCounter++;
+    if(boostCounter >= 10) fill(255);
 }
 
 function Ship() {
@@ -50,8 +49,8 @@ function Ship() {
     isUp = false;
     isRight = false;
     isLeft = false;
-    count = 10
-    setInterval(timeleft, 1000);
+    boostCounter = 10
+    setInterval(boostTimer, 1000);
 
     this.boosting = function (b) {
         this.isBoosting = b;
