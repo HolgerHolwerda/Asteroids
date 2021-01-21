@@ -14,8 +14,8 @@ function keyReleased() {
   }
   
   function keyPressed() {
-    if (key == ' ') {
-            lasers.push(new Laser(ship.pos));
+    if (keyCode == 32) {
+            lasers.push(new Laser(ship.pos, ship.direction));
     }
     if (keyCode == RIGHT_ARROW || keyCode == 68) {
         isRight = true;
