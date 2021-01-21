@@ -1,6 +1,10 @@
 
-function Asteroid() {
+function Asteroid(pos) {
+    if (pos) {
+        this.pos = pos.copy();
+    } else {
     this.pos = createVector(random(width), random(height))
+    }
     this.vel = p5.Vector.random2D();
     this.r = random(15, 50);
     this.total = floor(random(5, 15));
@@ -29,6 +33,13 @@ function Asteroid() {
         endShape(CLOSE);
         pop();
 
+    }
+
+    this.breakup = function() {
+        var newA = [];
+        newA[0] = new Asteroid(this.pos);
+        newA[1] = new Asteroid(this.pos);
+        return newA;
     }
 
     this.edges = function () {
