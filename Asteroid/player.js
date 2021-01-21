@@ -23,7 +23,7 @@ function keyReleased() {
     if (keyCode == UP_ARROW || keyCode == 87) {
         isUp = true
     }
-    if(keyCode == 32){
+    if(keyCode == 16){
         if(boostCounter >= 10){
             //Her bliver ultraboost brugt og ændre farven på skibet
             ship.ultraboost(true);
