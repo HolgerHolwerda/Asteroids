@@ -12,15 +12,15 @@ function setup() {
 
 function draw() {
   background(20);
-  ship.render();
-  ship.turn();
-  ship.update();
-  ship.edges();
-  ship.movement();
   for (var i = 0; i < asteroids.length; i++) {
     asteroids[i].render();
     asteroids[i].update();
     asteroids[i].edges();
   }
+  ship.render();
+  ship.turn();
+  ship.update();
+  ship.edges();
+  ship.movement();
 
 }
