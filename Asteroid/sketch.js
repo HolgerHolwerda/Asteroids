@@ -4,15 +4,10 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   ship = new Ship();
-<<<<<<< HEAD
-  // for (var i = 0; i < 7; i++){
-  //  asteroids.push(new Asteroid());
-  // }
-=======
+
   for (var i = 0; i < 7; i++){
   asteroids.push(new Asteroid());
   }
->>>>>>> ad7a47fa3b8f0e62ed399d5b8a6d792ac03a3413
 }
 
 function draw() {
