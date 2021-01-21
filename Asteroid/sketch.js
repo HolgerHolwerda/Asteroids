@@ -1,5 +1,7 @@
 var ship;
 var asteroids = [] // defining astroids as arrays
+var lasers = [];
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
@@ -22,4 +24,9 @@ function draw() {
   ship.update();
   ship.edges();
   ship.movement();
+
+  for (var i = 0; i < lasers.length; i++) {
+    lasers[i].render();
+    lasers[i].update();
+  }
 }
