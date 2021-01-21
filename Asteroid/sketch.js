@@ -19,15 +19,17 @@ function draw() {
     asteroids[i].update();
     asteroids[i].edges();
   }
+ 
+  for (var i = 0; i < lasers.length; i++) {
+  lasers[i].render();
+  lasers[i].update();
+}
+
   ship.render();
   ship.turn();
   ship.update();
   ship.edges();
   ship.movement();
 
-  for (var i = 0; i < lasers.length; i++) {
-    lasers[i].render();
-    lasers[i].update();
-  }
 
 }
