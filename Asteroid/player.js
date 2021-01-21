@@ -37,8 +37,8 @@ function keyReleased() {
   }
   //denne funktion bliver kaldt hvert sekundt
    function boostTimer(){
-    boostCounter++;
     if(boostCounter >= 10) fill(255);
+    else boostCounter++;;
 }
 
 function Ship() {
