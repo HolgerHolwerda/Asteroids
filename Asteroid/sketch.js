@@ -22,5 +22,4 @@ function draw() {
   ship.update();
   ship.edges();
   ship.movement();
-
 }
