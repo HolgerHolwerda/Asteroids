@@ -9,13 +9,13 @@ function keyReleased() {
         isLeft = false
     }
     if (keyCode == UP_ARROW || keyCode == 87) {
-      isUp = false
+        isUp = false
     }
-  }
-  
-  function keyPressed() {
+}
+
+function keyPressed() {
     if (keyCode == 32) {
-            lasers.push(new Laser(ship.pos, ship.direction));
+        lasers.push(new Laser(ship.pos, ship.direction));
     }
     if (keyCode == RIGHT_ARROW || keyCode == 68) {
         isRight = true;
@@ -26,18 +26,18 @@ function keyReleased() {
     if (keyCode == UP_ARROW || keyCode == 87) {
         isUp = true
     }
-    if(keyCode == 16){
-        if(boostCounter >= 10){
+    if (keyCode == 16) {
+        if (boostCounter >= 10) {
             //Her bliver ultraboost brugt og ændre farven på skibet
             ship.ultraboost(true);
             boostCounter = 0;
             fill(0);
         }
     }
-  }
-  //denne funktion bliver kaldt hvert sekundt
-   function boostTimer(){
-    if(boostCounter >= 10) fill(255);
+}
+//denne funktion bliver kaldt hvert sekundt
+function boostTimer() {
+    if (boostCounter >= 10) fill(255);
     else boostCounter++;;
 }
 
@@ -115,7 +115,7 @@ function Ship() {
         this.direction += this.rotation;
     }
 
-    this.movement = function() {
+    this.movement = function () {
         if (isUp) {
             push();
             ship.boosting;
@@ -124,14 +124,14 @@ function Ship() {
         ship.boosting(isUp)
 
         if (isRight) {
-            ship.setRotation (0.1);
+            ship.setRotation(0.1);
         }
 
         if (isLeft) {
-            ship.setRotation (-0.1);
+            ship.setRotation(-0.1);
         }
         if (!isLeft && !isRight || isLeft && isRight) {
-            ship.setRotation (0);
+            ship.setRotation(0);
         }
 
     }
