@@ -1,3 +1,5 @@
+let img;
+
 function boostbar(){
     push()
     fill(0)
@@ -8,6 +10,9 @@ function boostbar(){
     fill(255)
     pop()
 }
+function loadtutorial(){
+    img = loadImage("UI/Keys.png");
+}
 function tutorial(){
-    
+    image(img, windowWidth/2, 20, img.width / 2, img.height / 2);
 }

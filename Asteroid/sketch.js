@@ -7,15 +7,18 @@ function setup() {
 
   ship = new Ship();
 
+  loadtutorial();
+
   for (var i = 0; i < 7; i++){
   asteroids.push(new Asteroid());
   }
 }
 
 function draw() {
+  createCanvas(windowWidth, windowHeight);
   background(20);
-  boostbar()
-  
+  boostbar();
+  tutorial();
   for (var i = 0; i < asteroids.length; i++) {
     asteroids[i].render();
     asteroids[i].update();
