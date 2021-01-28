@@ -19,6 +19,7 @@ function draw() {
   background(20);
   boostbar();
   tutorial();
+  
   for (var i = 0; i < asteroids.length; i++) {
     asteroids[i].render();
     asteroids[i].update();
@@ -40,7 +41,7 @@ function draw() {
       }
     }
   }
-  
+   
   ship.render();
   ship.turn();
   ship.update();
