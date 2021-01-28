@@ -8,3 +8,6 @@ function boostbar(){
     fill(255)
     pop()
 }
+function tutorial(){
+    
+}
