@@ -31,7 +31,7 @@ function draw() {
     lasers[i].update();
     for (var j = asteroids.length - 1; j >= 0; j--) {
       if (lasers[i].hits(asteroids[j])) {
-        if (asteroids[j].r > 10) {
+        if (asteroids[j].r > 15) {
           var newAsteroids = asteroids[j].breakup();
           // debug console.log(newAsteroids);
           asteroids = asteroids.concat(newAsteroids);
