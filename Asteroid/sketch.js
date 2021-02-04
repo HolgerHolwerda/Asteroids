@@ -35,7 +35,7 @@ function draw() {
           var newAsteroids = asteroids[j].breakup();
           // debug console.log(newAsteroids);
           asteroids = asteroids.concat(newAsteroids);
-        }
+        } else if ( random(0, 10) > 5 ){ asteroids.push(new Asteroid()) }
         asteroids.splice(j, 1);
         lasers.splice(i, 1);
         break;
@@ -48,4 +48,7 @@ function draw() {
   ship.update();
   ship.edges();
   ship.movement();
+
+
+  //console.log(asteroids.length);
 }
