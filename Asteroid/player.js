@@ -13,6 +13,10 @@ function keyReleased() {
     }
 }
 
+function mousePressed() {
+        lasers.push(new Laser(ship.pos, ship.direction));
+    }
+
 function keyPressed() {
     if (keyCode == 32) {
         lasers.push(new Laser(ship.pos, ship.direction));
