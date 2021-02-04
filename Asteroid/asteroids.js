@@ -12,7 +12,7 @@ function Asteroid(pos, r) {
     }
 
     this.vel = p5.Vector.random2D();// tilfældig vektorer til vinklerne af asteriods
-    this.total = floor(random(5, 15));// antal af asteriods 
+    this.total = floor(random(5, 15));
     this.offset = [];
     for (var i = 0; i < this.total; i++) {
         this.offset[i] = random(-this.r * 0.5, this.r * 0.5);
