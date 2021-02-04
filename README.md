@@ -8,3 +8,5 @@ Kravspecifikation:
 * Der skal være astroider
 * Astroider skal svæve tilfældigt rundt
 * Asteroiderne skal gennereres tilfældigt
+
+[Klik her for at spille asteroids](../Asteroids)
