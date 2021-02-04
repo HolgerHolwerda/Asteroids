@@ -22,7 +22,7 @@ function Asteroid(pos, r) {
 
     }
     this.render = function () {
-        push();
+        push(); // push and pop er for at ''indspære'' en kode til at virke kun på det der er inden i dem
         stroke(255);
         noFill();
         translate(this.pos.x, this.pos.y);
