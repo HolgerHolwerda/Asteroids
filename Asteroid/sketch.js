@@ -13,7 +13,7 @@ function setup() {
 
   for (var i = 0; i < asteroidsamount; i++) {
     asteroids.push(new Asteroid());
-  }
+  }// antal asteriods 
 }
 
 function draw() {
