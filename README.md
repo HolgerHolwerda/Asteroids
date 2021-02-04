@@ -9,4 +9,4 @@ Kravspecifikation:
 * Astroider skal svæve tilfældigt rundt
 * Asteroiderne skal gennereres tilfældigt
 
-[Klik her for at spille asteroids](../Asteroids)
+[Klik her for at spille asteroids](Asteroid/_index.html)
