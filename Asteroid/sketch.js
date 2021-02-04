@@ -1,6 +1,8 @@
 var ship;
 var asteroids = [] // defining astroids as arrays
 var lasers = [];
+var asteroidsamount = 7;
+var money = 0
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -9,7 +11,7 @@ function setup() {
 
   loadtutorial();
 
-  for (var i = 0; i < 7; i++) {
+  for (var i = 0; i < asteroidsamount; i++) {
     asteroids.push(new Asteroid());
   }// antal asteriods 
 }
@@ -35,14 +37,31 @@ function draw() {
           var newAsteroids = asteroids[j].breakup();
           // debug console.log(newAsteroids);
           asteroids = asteroids.concat(newAsteroids);
-        } else if ( random(0, 10) > 5 ){ asteroids.push(new Asteroid()) }
+        }else{
+          money += 10
+          print(money)
+        }
+        if (asteroids.length <= asteroidsamount){
+          asteroids.push(new Asteroid());
+          asteroidsamount += 0.1
+        }
         asteroids.splice(j, 1);
         lasers.splice(i, 1);
         break;
       }
     }
   }
-
+  for (var i = asteroids.length - 1; i >= 0; i--) {
+    if (ship.hits(asteroids[i])){
+      print("hit");
+      restartbutton = createButton("Restart");
+      restartbutton.position(windowWidth / 2, windowHeight / 2)
+      restartbutton.mouseClicked(restartgame)
+      stopgame()
+    }else{
+      
+    }
+  }
   ship.render();
   ship.turn();
   ship.update();
@@ -51,4 +70,11 @@ function draw() {
 
 
   //console.log(asteroids.length);
+}
+//!!!Clean Up!!!!
+function restartgame(){
+  window.location.reload()
+}
+function stopgame(){
+  noLoop();
 }
