@@ -2,7 +2,7 @@ var ship;
 var asteroids = [] // defining astroids as arrays
 var lasers = [];
 var asteroidsamount = 7;
-var money = 0
+var Score = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -21,6 +21,7 @@ function draw() {
   background(20);
   boostbar();
   tutorial();
+  score();
 
   for (var i = 0; i < asteroids.length; i++) {
     asteroids[i].render();
@@ -38,8 +39,7 @@ function draw() {
           // debug console.log(newAsteroids);
           asteroids = asteroids.concat(newAsteroids);
         }else{
-          money += 10
-          print(money)
+          Score += 1
         }
         if (asteroids.length <= asteroidsamount){
           asteroids.push(new Asteroid());
@@ -53,7 +53,6 @@ function draw() {
   }
   for (var i = asteroids.length - 1; i >= 0; i--) {
     if (ship.hits(asteroids[i])){
-      print("hit");
       restartbutton = createButton("Restart");
       restartbutton.position(windowWidth / 2, windowHeight / 2)
       restartbutton.mouseClicked(restartgame)

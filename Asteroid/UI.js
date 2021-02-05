@@ -40,3 +40,12 @@ function tutorial() {
     }
     pop()
 }
+function score(){
+    
+    textSize(30);
+    fill(255);
+    // rect(windowWidth - 200, 30, windowWidth, 50)
+    // fill(255, 255, 255);
+    textAlign(CENTER);
+    text("Score : " + Score, width - 200, 50);
+}
