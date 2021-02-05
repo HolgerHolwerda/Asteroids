@@ -47,7 +47,7 @@ function Asteroid(pos, r) {
         return newA;
     }
 
-    this.edges = function () {
+    this.edges = function () { // dette her gøre at man astroids ikke følger efter playeren 
         if (this.pos.x > width + this.r) {
             this.pos.x = -this.r;
         } else if (this.pos.x < -this.r) {
