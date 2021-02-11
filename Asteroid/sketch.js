@@ -43,7 +43,7 @@ function draw() {
         }
         if (asteroids.length <= asteroidsamount){
           asteroids.push(new Asteroid());
-          asteroidsamount += 0.1
+          asteroidsamount += 0.5
         }
         asteroids.splice(j, 1);
         lasers.splice(i, 1);
