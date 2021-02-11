@@ -1,7 +1,6 @@
 function keyReleased() {
     //ship.setRotation(0);
     ship.boosting(false);
-    //ship.ultraboost(false);
     if (keyCode == RIGHT_ARROW || keyCode == 68) {
         isRight = false
     }
@@ -32,10 +31,9 @@ function keyPressed() {
     }
     if (keyCode == 16) {
         if (boostCounter >= 10) {
-            //Her bliver ultraboost brugt og ændre farven på skibet
+            //Her bliver ultraboost brugt
             ship.ultraboost(true);
             boostCounter = 0;
-            fill(0);
         }
     }
 }
