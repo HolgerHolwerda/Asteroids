@@ -9,6 +9,7 @@ function setup() {
 
   ship = new Ship();
 
+  //This loads tutorial image
   loadtutorial();
 
   for (var i = 0; i < asteroidsamount; i++) {
