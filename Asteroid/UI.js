@@ -3,8 +3,10 @@ let img;
 //variables to make the scaling of the tutorial
 let a = 0.0;
 let s = 0.0;
-//stops tutorial
+//made to stop tutorial
 let istutorialkey = false
+
+var Score = 0;
 
 function boostbar() {
     push()
@@ -44,8 +46,21 @@ function score(){
     
     textSize(30);
     fill(255);
-    // rect(windowWidth - 200, 30, windowWidth, 50)
-    // fill(255, 255, 255);
     textAlign(CENTER);
     text("Score : " + Score, width - 200, 50);
 }
+function restartUI(){
+    restartbutton = createButton("Restart");
+    restartbutton.position(windowWidth / 2 - windowWidth / 10, windowHeight / 2 - windowHeight / 10)
+    restartbutton.size(windowWidth / 5, windowHeight / 20)
+    restartbutton.style("font-size","35px")
+    restartbutton.mouseClicked(restartgame)
+    stopgame()
+}
+
+function restartgame(){
+    window.location.reload()
+  }
+  function stopgame(){
+    noLoop();
+  }
