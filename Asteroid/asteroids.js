@@ -3,7 +3,7 @@ function Asteroid(pos, r) {
     if (pos) {
         this.pos = pos.copy();
     } else {
-        this.pos = createVector(random(width), random(height))
+        this.pos = createVector(random(width), random(height))// Random possining of astroids
     }
     if (r) {
         this.r = r * 0.5;
